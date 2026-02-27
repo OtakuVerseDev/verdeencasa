@@ -6,35 +6,66 @@ const allPosts = await getCollection('blog');
 const recentPosts = allPosts.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()).slice(0, 6);
 
 const categories = [
-  { name: 'Guías de cuidado', slug: 'guias', icon: '🌿', desc: 'Cómo cuidar tus plantas paso a paso' },
-  { name: 'Problemas y enfermedades', slug: 'problemas', icon: '🔍', desc: 'Soluciones para hojas amarillas, hongos y más' },
-  { name: 'Tipos de plantas', slug: 'tipos', icon: '🪴', desc: 'Elige la planta perfecta para tu hogar' },
+  { name: 'Guías de cuidado', slug: 'guias', icon: '📘', desc: 'Aprende paso a paso a cuidar cada tipo de planta' },
+  { name: 'Problemas y enfermedades', slug: 'problemas', icon: '🔍', desc: 'Diagnostica y resuelve los problemas más comunes' },
+  { name: 'Tipos de plantas', slug: 'tipos', icon: '🪴', desc: 'Descubre la planta perfecta para tu hogar' },
 ];
 ---
 
 <BaseLayout
-  title="VerdeEnCasa — Guías de plantas de interior en español"
-  description="Todo lo que necesitas saber sobre tus plantas de interior: cuidados, riego, luz, enfermedades y más. Guías claras y prácticas para tener un hogar lleno de vida."
+  title="VerdeEnCasa — Tu guía completa de plantas de interior"
+  description="Aprende a cuidar tus plantas de interior con guías prácticas, soluciones a problemas comunes y consejos de expertos. Todo en español, fácil y sin complicaciones."
 >
   <!-- Hero -->
   <section class="hero">
     <div>
-      <h1>Tu guía de plantas de interior 🌿</h1>
-      <p>Aprende a cuidar tus plantas, soluciona problemas y convierte tu hogar en un espacio verde. Sin complicaciones.</p>
+      <h1>🌿 Cuida tus plantas como un experto</h1>
+      <p>Guías claras, soluciones rápidas y consejos prácticos para que tus plantas de interior prosperen. Sin tecnicismos, solo lo que funciona.</p>
+      <div class="hero-cta">
+        <a href="/guias/" class="btn btn-primary">Ver guías de cuidado</a>
+        <a href="/problemas/" class="btn btn-secondary">Resolver un problema</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué confiar en nosotros -->
+  <section style="padding: 4rem 0 2rem; background: #fff;">
+    <div class="container--wide">
+      <h2 style="font-size:1.8rem; font-weight:800; text-align:center; margin-bottom:3rem; color:#0a0a0a;">¿Por qué VerdeEnCasa?</h2>
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon">✅</div>
+          <h3>Guías verificadas</h3>
+          <p>Cada artículo está respaldado por investigación y experiencia real con plantas de interior.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">🇪🇸</div>
+          <h3>100% en español</h3>
+          <p>Adaptado al clima, las condiciones y las plantas disponibles en España y Latinoamérica.</p>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon">💡</div>
+          <h3>Soluciones prácticas</h3>
+          <p>Sin tecnicismos innecesarios. Te decimos qué hacer y cómo hacerlo, paso a paso.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Categorías -->
-  <section style="padding: 3rem 0;">
+  <section style="padding: 3rem 0; background: #fafafa;">
     <div class="container--wide">
-      <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:1.5rem; color:#111827;">Explora por categoría</h2>
+      <h2 style="font-size:1.8rem; font-weight:800; margin-bottom:0.75rem; color:#0a0a0a;">Explora por categoría</h2>
+      <p style="color:#737373; margin-bottom:2.5rem; font-size:1.05rem;">Encuentra exactamente lo que necesitas para tus plantas</p>
       <div class="cards-grid">
         {categories.map(cat => (
           <a href={`/${cat.slug}/`} style="text-decoration:none;">
-            <div class="card" style="padding:1.5rem;">
-              <div style="font-size:2rem; margin-bottom:0.75rem;">{cat.icon}</div>
-              <h3 style="font-size:1.1rem; font-weight:700; color:#111827; margin-bottom:0.4rem;">{cat.name}</h3>
-              <p style="font-size:0.88rem; color:#6b7280;">{cat.desc}</p>
+            <div class="card">
+              <div class="card-image">{cat.icon}</div>
+              <div class="card-body">
+                <h3 class="card-title">{cat.name}</h3>
+                <p class="card-excerpt">{cat.desc}</p>
+              </div>
             </div>
           </a>
         ))}
@@ -43,13 +74,15 @@ const categories = [
   </section>
 
   <!-- Artículos recientes -->
-  <section style="padding: 0 0 3rem;">
+  <section style="padding: 4rem 0; background: #fff;">
     <div class="container--wide">
-      <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:1.5rem; color:#111827;">Artículos recientes</h2>
+      <h2 style="font-size:1.8rem; font-weight:800; margin-bottom:0.75rem; color:#0a0a0a;">Artículos recientes</h2>
+      <p style="color:#737373; margin-bottom:2.5rem; font-size:1.05rem;">Las últimas guías y soluciones para tus plantas</p>
       <div class="cards-grid">
         {recentPosts.map(post => (
           <a href={`/blog/${post.id}/`} style="text-decoration:none;">
             <div class="card">
+              <div class="card-image">🌱</div>
               <div class="card-body">
                 <span class="card-tag">{post.data.category}</span>
                 <p class="card-title">{post.data.title}</p>
@@ -59,6 +92,15 @@ const categories = [
           </a>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section style="padding: 4rem 1.5rem; background: linear-gradient(135deg, #d1fae5 0%, #6ee7b7 100%); text-align: center;">
+    <div style="max-width: 700px; margin: 0 auto;">
+      <h2 style="font-size:2rem; font-weight:800; color:#064e3b; margin-bottom:1rem;">¿Necesitas ayuda con tus plantas?</h2>
+      <p style="font-size:1.1rem; color:#065f46; margin-bottom:2rem;">Tenemos más de 50 guías detalladas para ayudarte a mantener tus plantas sanas y bonitas.</p>
+      <a href="/guias/" class="btn btn-primary">Explorar todas las guías</a>
     </div>
   </section>
 </BaseLayout>
