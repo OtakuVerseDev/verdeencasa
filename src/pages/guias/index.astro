@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const guias = posts.filter(p => p.data.category === 'Guías de cuidado').sort((a,b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+---
+
+<BaseLayout
+  title="Guías de cuidado de plantas de interior — VerdeEnCasa"
+  description="Aprende a cuidar tus plantas de interior paso a paso. Guías de riego, luz, abono y trasplante para todo tipo de plantas."
+>
+  <div class="container--wide" style="padding-top:2.5rem;">
+    <h1 style="font-size:2rem; font-weight:800; color:#111827; margin-bottom:0.5rem;">🌿 Guías de cuidado</h1>
+    <p style="color:#6b7280; margin-bottom:2rem;">Todo lo que necesitas saber para mantener tus plantas de interior sanas y bonitas.</p>
+    <div class="cards-grid">
+      {guias.map(post => (
+        <a href={`/blog/${post.id.replace(/\.md$/, '')}/`} style="text-decoration:none;">
+          <div class="card">
+            <div class="card-body">
+              <span class="card-tag">Guía</span>
+              <p class="card-title">{post.data.title}</p>
+              <p class="card-excerpt">{post.data.description}</p>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

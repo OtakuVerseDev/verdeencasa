@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const recentPosts = allPosts.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()).slice(0, 6);
+
+const categories = [
+  { name: 'Guías de cuidado', slug: 'guias', icon: '🌿', desc: 'Cómo cuidar tus plantas paso a paso' },
+  { name: 'Problemas y enfermedades', slug: 'problemas', icon: '🔍', desc: 'Soluciones para hojas amarillas, hongos y más' },
+  { name: 'Tipos de plantas', slug: 'tipos', icon: '🪴', desc: 'Elige la planta perfecta para tu hogar' },
+];
+---
+
+<BaseLayout
+  title="VerdeEnCasa — Guías de plantas de interior en español"
+  description="Todo lo que necesitas saber sobre tus plantas de interior: cuidados, riego, luz, enfermedades y más. Guías claras y prácticas para tener un hogar lleno de vida."
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Tu guía de plantas de interior 🌿</h1>
+      <p>Aprende a cuidar tus plantas, soluciona problemas y convierte tu hogar en un espacio verde. Sin complicaciones.</p>
+    </div>
+  </section>
+
+  <!-- Categorías -->
+  <section style="padding: 3rem 0;">
+    <div class="container--wide">
+      <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:1.5rem; color:#111827;">Explora por categoría</h2>
+      <div class="cards-grid">
+        {categories.map(cat => (
+          <a href={`/${cat.slug}/`} style="text-decoration:none;">
+            <div class="card" style="padding:1.5rem;">
+              <div style="font-size:2rem; margin-bottom:0.75rem;">{cat.icon}</div>
+              <h3 style="font-size:1.1rem; font-weight:700; color:#111827; margin-bottom:0.4rem;">{cat.name}</h3>
+              <p style="font-size:0.88rem; color:#6b7280;">{cat.desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Artículos recientes -->
+  <section style="padding: 0 0 3rem;">
+    <div class="container--wide">
+      <h2 style="font-size:1.5rem; font-weight:700; margin-bottom:1.5rem; color:#111827;">Artículos recientes</h2>
+      <div class="cards-grid">
+        {recentPosts.map(post => (
+          <a href={`/blog/${post.id}/`} style="text-decoration:none;">
+            <div class="card">
+              <div class="card-body">
+                <span class="card-tag">{post.data.category}</span>
+                <p class="card-title">{post.data.title}</p>
+                <p class="card-excerpt">{post.data.description}</p>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

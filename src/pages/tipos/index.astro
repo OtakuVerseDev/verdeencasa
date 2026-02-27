@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const tipos = posts.filter(p => p.data.category === 'Tipos de plantas').sort((a,b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+---
+
+<BaseLayout
+  title="Tipos de plantas de interior — VerdeEnCasa"
+  description="Descubre qué planta de interior es perfecta para ti. Comparativas, características y recomendaciones según luz, espacio y nivel de cuidado."
+>
+  <div class="container--wide" style="padding-top:2.5rem;">
+    <h1 style="font-size:2rem; font-weight:800; color:#111827; margin-bottom:0.5rem;">🪴 Tipos de plantas</h1>
+    <p style="color:#6b7280; margin-bottom:2rem;">Encuentra la planta perfecta para tu hogar según tus condiciones y nivel de experiencia.</p>
+    <div class="cards-grid">
+      {tipos.map(post => (
+        <a href={`/blog/${post.id.replace(/\.md$/, '')}/`} style="text-decoration:none;">
+          <div class="card">
+            <div class="card-body">
+              <span class="card-tag">Tipo de planta</span>
+              <p class="card-title">{post.data.title}</p>
+              <p class="card-excerpt">{post.data.description}</p>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

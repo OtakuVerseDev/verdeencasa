@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { id: post.id.replace(/\.md$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const categorySlugMap: Record<string, string> = {
+  'Guías de cuidado': 'guias',
+  'Problemas y enfermedades': 'problemas',
+  'Tipos de plantas': 'tipos',
+};
+const catSlug = categorySlugMap[post.data.category] ?? 'guias';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "datePublished": post.data.pubDate.toISOString(),
+  "author": { "@type": "Organization", "name": "VerdeEnCasa" },
+  "publisher": { "@type": "Organization", "name": "VerdeEnCasa", "url": "https://www.verdeencasa.es" },
+};
+---
+
+<BaseLayout title={`${post.data.title} — VerdeEnCasa`} description={post.data.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <div class="container">
+    <div class="article-header">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
+        <a href="/">Inicio</a> › <a href={`/${catSlug}/`}>{post.data.category}</a> › {post.data.title}
+      </nav>
+      <h1>{post.data.title}</h1>
+      <p class="article-meta">
+        Por {post.data.author} · <time datetime={post.data.pubDate.toISOString()}>
+          {post.data.pubDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+      </p>
+    </div>
+
+    <div class="article-content">
+      <Content />
+    </div>
+
+    <div style="margin-top:2rem; padding:1.5rem; background:#f0fdf4; border-radius:12px; border:1px solid #86efac;">
+      <p style="font-size:0.9rem; color:#065f46;">
+        ¿Te ha sido útil este artículo? Compártelo con alguien que también tenga plantas en casa 🌿
+      </p>
+    </div>
+  </div>
+</BaseLayout>
