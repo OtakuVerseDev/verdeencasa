@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { getArticleImage } from '../utils/images';
 
 const allPosts = await getCollection('blog');
 const recentPosts = allPosts.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()).slice(0, 6);
@@ -82,7 +83,7 @@ const categories = [
         {recentPosts.map(post => (
           <a href={`/blog/${post.id}/`} style="text-decoration:none;">
             <div class="card">
-              <div class="card-image">🌱</div>
+              <div class="card-image" style={`background-image: url('${getArticleImage(post.id)}'); background-size: cover; background-position: center; height: 200px; border-radius: 12px 12px 0 0;`}></div>
               <div class="card-body">
                 <span class="card-tag">{post.data.category}</span>
                 <p class="card-title">{post.data.title}</p>
