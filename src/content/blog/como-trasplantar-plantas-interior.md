@@ -198,4 +198,3 @@ Trasplantar no es complicado si sigues estos pasos y respetas las señales de tu
 - Usar sustrato de calidad
 - Regar bien después
 
-Con estos consejos, tus plantas vivirán felices durante años. ¿Tienes dudas sobre un trasplante específico? Escríbenos a hola@verdeencasa.es.

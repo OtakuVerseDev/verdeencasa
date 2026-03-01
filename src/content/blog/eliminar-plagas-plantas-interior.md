@@ -108,4 +108,3 @@ Los insecticidas químicos son efectivos, pero solo deberías usarlos si:
 
 La mayoría de las plagas se eliminan con constancia, agua y jabón. La clave es detectarlas pronto y actuar rápido. Revisa tus plantas una vez por semana — te llevará 5 minutos y te ahorrará problemas graves.
 
-¿Tienes una plaga que no logras identificar? Escríbenos a hola@verdeencasa.es con una foto y te ayudamos.

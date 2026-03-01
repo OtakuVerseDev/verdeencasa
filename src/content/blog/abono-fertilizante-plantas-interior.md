@@ -248,4 +248,3 @@ El abono es esencial para plantas de interior sanas, pero la clave es:
 
 Recuerda: **es mejor abonar poco y con frecuencia que mucho de golpe**. Las plantas prefieren nutrición constante a picos de fertilización.
 
-¿Tienes dudas sobre el abono de tu planta? Escríbenos a hola@verdeencasa.es.

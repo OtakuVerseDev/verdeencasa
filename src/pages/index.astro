@@ -14,14 +14,14 @@ const categories = [
 ---
 
 <BaseLayout
-  title="VerdeEnCasa — Tu guía completa de plantas de interior"
-  description="Aprende a cuidar tus plantas de interior con guías prácticas, soluciones a problemas comunes y consejos de expertos. Todo en español, fácil y sin complicaciones."
+  title="VerdeEnCasa — Guía completa de cuidado de plantas de interior 2026"
+  description="Aprende a cuidar plantas de interior con +30 guías completas. Soluciones a hojas amarillas, riego, luz, plagas. Todo en español. Consejos prácticos para principiantes y expertos."
 >
   <!-- Hero -->
   <section class="hero">
     <div>
-      <h1>🌿 Cuida tus plantas como un experto</h1>
-      <p>Guías claras, soluciones rápidas y consejos prácticos para que tus plantas de interior prosperen. Sin tecnicismos, solo lo que funciona.</p>
+      <h1>🌿 Cómo cuidar plantas de interior: guía completa 2026</h1>
+      <p>Más de 30 guías paso a paso para cuidar plantas de interior. Aprende a resolver hojas amarillas, riego correcto, trasplante, plagas y mucho más. Todo en español y gratis.</p>
       <div class="hero-cta">
         <a href="/guias/" class="btn btn-primary">Ver guías de cuidado</a>
         <a href="/problemas/" class="btn btn-secondary">Resolver un problema</a>
@@ -99,9 +99,49 @@ const categories = [
   <!-- CTA final -->
   <section style="padding: 4rem 1.5rem; background: linear-gradient(135deg, #d1fae5 0%, #6ee7b7 100%); text-align: center;">
     <div style="max-width: 700px; margin: 0 auto;">
-      <h2 style="font-size:2rem; font-weight:800; color:#064e3b; margin-bottom:1rem;">¿Necesitas ayuda con tus plantas?</h2>
-      <p style="font-size:1.1rem; color:#065f46; margin-bottom:2rem;">Tenemos más de 50 guías detalladas para ayudarte a mantener tus plantas sanas y bonitas.</p>
-      <a href="/guias/" class="btn btn-primary">Explorar todas las guías</a>
+      <h2 style="font-size:2rem; font-weight:800; color:#064e3b; margin-bottom:1rem;">¿Tu planta tiene un problema?</h2>
+      <p style="font-size:1.1rem; color:#065f46; margin-bottom:2rem;">Más de 30 guías detalladas con soluciones paso a paso para los problemas más comunes.</p>
+      <a href="/problemas/" class="btn btn-primary">Ver problemas y soluciones</a>
+    </div>
+  </section>
+
+  <!-- Problemas más buscados -->
+  <section style="padding: 4rem 0; background: #fff;">
+    <div class="container">
+      <h2 style="font-size:1.8rem; font-weight:800; margin-bottom:0.75rem; color:#0a0a0a; text-align:center;">Problemas más frecuentes en plantas de interior</h2>
+      <p style="color:#737373; margin-bottom:3rem; font-size:1.05rem; text-align:center;">Encuentra la solución rápida a los problemas que más afectan a tus plantas</p>
+      
+      <div style="max-width:900px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+        <a href="/blog/hojas-amarillas-pothos/" style="padding:1.5rem; background:#f9fafb; border-radius:12px; border:2px solid #e5e7eb; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='#059669'" onmouseout="this.style.borderColor='#e5e7eb'">
+          <h3 style="font-size:1.1rem; font-weight:700; color:#0a0a0a; margin-bottom:0.5rem;">🟡 Hojas amarillas</h3>
+          <p style="color:#6b7280; font-size:0.9rem; margin:0;">Por qué aparecen y cómo solucionarlo →</p>
+        </a>
+        
+        <a href="/blog/por-que-se-caen-hojas-planta/" style="padding:1.5rem; background:#f9fafb; border-radius:12px; border:2px solid #e5e7eb; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='#059669'" onmouseout="this.style.borderColor='#e5e7eb'">
+          <h3 style="font-size:1.1rem; font-weight:700; color:#0a0a0a; margin-bottom:0.5rem;">🍂 Hojas que se caen</h3>
+          <p style="color:#6b7280; font-size:0.9rem; margin:0;">7 causas comunes y soluciones →</p>
+        </a>
+        
+        <a href="/blog/manchas-marrones-hojas-plantas/" style="padding:1.5rem; background:#f9fafb; border-radius:12px; border:2px solid #e5e7eb; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='#059669'" onmouseout="this.style.borderColor='#e5e7eb'">
+          <h3 style="font-size:1.1rem; font-weight:700; color:#0a0a0a; margin-bottom:0.5rem;">🟤 Manchas marrones</h3>
+          <p style="color:#6b7280; font-size:0.9rem; margin:0;">Diagnóstico y tratamiento →</p>
+        </a>
+        
+        <a href="/blog/eliminar-plagas-plantas-interior/" style="padding:1.5rem; background:#f9fafb; border-radius:12px; border:2px solid #e5e7eb; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='#059669'" onmouseout="this.style.borderColor='#e5e7eb'">
+          <h3 style="font-size:1.1rem; font-weight:700; color:#0a0a0a; margin-bottom:0.5rem;">🐛 Plagas</h3>
+          <p style="color:#6b7280; font-size:0.9rem; margin:0;">Cómo identificar y eliminar →</p>
+        </a>
+        
+        <a href="/blog/hojas-secas-puntas-marrones/" style="padding:1.5rem; background:#f9fafb; border-radius:12px; border:2px solid #e5e7eb; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='#059669'" onmouseout="this.style.borderColor='#e5e7eb'">
+          <h3 style="font-size:1.1rem; font-weight:700; color:#0a0a0a; margin-bottom:0.5rem;">🔥 Puntas secas</h3>
+          <p style="color:#6b7280; font-size:0.9rem; margin:0;">Causas y prevención →</p>
+        </a>
+        
+        <a href="/blog/planta-no-crece-causas/" style="padding:1.5rem; background:#f9fafb; border-radius:12px; border:2px solid #e5e7eb; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='#059669'" onmouseout="this.style.borderColor='#e5e7eb'">
+          <h3 style="font-size:1.1rem; font-weight:700; color:#0a0a0a; margin-bottom:0.5rem;">📉 No crece</h3>
+          <p style="color:#6b7280; font-size:0.9rem; margin:0;">10 razones y soluciones →</p>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -199,6 +239,21 @@ const categories = [
         }
       }
     ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "VerdeEnCasa",
+    "url": "https://verdeencasa.es",
+    "description": "Guía completa de cuidado de plantas de interior en español. Más de 30 artículos con soluciones prácticas.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://verdeencasa.es/blog/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   }
   </script>
 </BaseLayout>

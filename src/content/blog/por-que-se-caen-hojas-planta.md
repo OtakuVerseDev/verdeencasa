@@ -153,4 +153,3 @@ Si el tallo está blando, negro o hueco, la planta ha muerto.
 
 La mayoría de las veces, la caída de hojas se debe a riego excesivo o cambios ambientales. Observa bien tu planta, identifica el patrón de caída y ajusta los cuidados. Con tiempo y paciencia, se recuperará.
 
-¿Tu planta sigue perdiendo hojas y no sabes por qué? Escríbenos con fotos a hola@verdeencasa.es.
