@@ -12,7 +12,8 @@ const guias = posts.filter(p => p.data.category === 'Guías de cuidado').sort((a
 >
   <div class="container--wide" style="padding-top:2.5rem;">
     <h1 style="font-size:2rem; font-weight:800; color:#111827; margin-bottom:0.5rem;">🌿 Guías de cuidado</h1>
-    <p style="color:#6b7280; margin-bottom:2rem;">Todo lo que necesitas saber para mantener tus plantas de interior sanas y bonitas.</p>
+    <p style="color:#6b7280; margin-bottom:0.5rem;">Todo lo que necesitas saber para mantener tus plantas de interior sanas y bonitas.</p>
+    <p style="color:#737373; font-size:0.95rem; margin-bottom:2rem;"><strong>{guias.length} guías completas</strong> — Riego, luz, abono, trasplante, poda y más</p>
     <div class="cards-grid">
       {guias.map(post => (
         <a href={`/blog/${post.id.replace(/\.md$/, '')}/`} style="text-decoration:none;">

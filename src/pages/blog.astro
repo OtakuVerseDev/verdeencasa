@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a,b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+// Group by category
+const categories = {
+  'Guías de cuidado': sortedPosts.filter(p => p.data.category === 'Guías de cuidado'),
+  'Problemas y enfermedades': sortedPosts.filter(p => p.data.category === 'Problemas y enfermedades'),
+  'Tipos de plantas': sortedPosts.filter(p => p.data.category === 'Tipos de plantas'),
+};
+---
+
+<BaseLayout
+  title="Blog — Todas las guías de plantas de interior — VerdeEnCasa"
+  description="Explora todas nuestras guías completas sobre el cuidado de plantas de interior. Más de 30 artículos con información detallada y consejos prácticos."
+>
+  <div class="container" style="padding:4rem 0;">
+    <h1 style="font-size:2.5rem; font-weight:800; color:#0a0a0a; margin-bottom:1rem;">📚 Todas nuestras guías</h1>
+    <p style="font-size:1.1rem; color:#737373; margin-bottom:3rem;">
+      {sortedPosts.length} artículos completos para ayudarte a cuidar tus plantas de interior como un experto
+    </p>
+
+    {Object.entries(categories).map(([categoryName, categoryPosts]) => (
+      <section style="margin-bottom:4rem;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
+          <h2 style="font-size:1.75rem; font-weight:700; color:#0a0a0a; margin:0;">
+            {categoryName === 'Guías de cuidado' && '🌱 '}
+            {categoryName === 'Problemas y enfermedades' && '🔍 '}
+            {categoryName === 'Tipos de plantas' && '🪴 '}
+            {categoryName}
+          </h2>
+          <span style="color:#737373; font-size:0.95rem;">{categoryPosts.length} artículos</span>
+        </div>
+        
+        <div class="cards-grid">
+          {categoryPosts.map(post => (
+            <a href={`/blog/${post.id.replace(/\.md$/, '')}/`} style="text-decoration:none;">
+              <div class="card">
+                <div class="card-body">
+                  <span class="card-tag">{post.data.category}</span>
+                  <p class="card-title">{post.data.title}</p>
+                  <p class="card-excerpt">{post.data.description}</p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <div style="margin-top:4rem; padding:2rem; background:linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%); border-radius:12px; text-align:center;">
+      <h3 style="font-size:1.5rem; font-weight:700; color:#065f46; margin-bottom:1rem;">¿No encuentras lo que buscas?</h3>
+      <p style="color:#047857; margin-bottom:1.5rem;">Escríbenos y lo añadiremos a nuestra lista de próximas guías</p>
+      <a href="/contacto/" class="btn btn-primary">Contáctanos</a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    transition: all 0.2s ease;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .card:hover {
+    border-color: #059669;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .card-tag {
+    display: inline-block;
+    background: #d1fae5;
+    color: #065f46;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .card-excerpt {
+    font-size: 0.9rem;
+    color: #737373;
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>
+</BaseLayout>
