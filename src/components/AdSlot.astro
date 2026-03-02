@@ -1,0 +1,93 @@
+---
+// src/components/AdSlot.astro
+// Componente para Google AdSense - slots predefinidos
+export interface Props {
+  slot: 'in-article' | 'sidebar' | 'footer';
+  enabled?: boolean;
+}
+
+const { slot, enabled = false } = Astro.props;
+
+// Mapeo de clases según tipo de slot
+const slotClasses = {
+  'in-article': 'ad-slot ad-in-article',
+  'sidebar': 'ad-slot ad-sidebar',
+  'footer': 'ad-slot ad-footer'
+};
+---
+
+{enabled ? (
+  <div class={slotClasses[slot]}>
+    <!-- Google AdSense code irá aquí cuando esté aprobado -->
+    <div class="ad-placeholder">
+      <span class="ad-label">Publicidad</span>
+    </div>
+  </div>
+) : (
+  <!-- Slot reservado pero invisible hasta activar AdSense -->
+  <div class={slotClasses[slot]} data-slot-reserved="true" style="display: none;"></div>
+)}
+
+<style>
+  .ad-slot {
+    margin: 2.5rem auto;
+    text-align: center;
+  }
+  
+  .ad-in-article {
+    max-width: 728px;
+    min-height: 90px;
+    background: #f9fafb;
+    border: 1px dashed #e5e7eb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ad-sidebar {
+    max-width: 300px;
+    min-height: 250px;
+    background: #f9fafb;
+    border: 1px dashed #e5e7eb;
+    border-radius: 8px;
+    position: sticky;
+    top: 100px;
+  }
+  
+  .ad-footer {
+    max-width: 970px;
+    min-height: 90px;
+    background: #f9fafb;
+    border: 1px dashed #e5e7eb;
+    border-radius: 8px;
+    margin-top: 3rem;
+  }
+  
+  .ad-placeholder {
+    padding: 2rem;
+    color: #9ca3af;
+  }
+  
+  .ad-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    .ad-in-article {
+      max-width: 100%;
+      min-height: 50px;
+    }
+    
+    .ad-sidebar {
+      display: none;
+    }
+    
+    .ad-footer {
+      max-width: 100%;
+    }
+  }
+</style>
