@@ -46,11 +46,11 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site);
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Preload the Google Fonts stylesheet to reduce render-blocking -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" crossorigin onload="this.rel='stylesheet'" />
     <!-- Optionally preload likely font files (best-effort) -->
     <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v" crossorigin />
     <link rel="preload" as="font" href="https://fonts.gstatic.com/s/playfairdisplay/v" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
 
     <!-- Preload Hero image (LCP) to improve LCP timing -->
     <link rel="preload" as="image" href="/og/hero-1200x630.webp">
@@ -68,7 +68,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site);
     </style>
 
     <!-- Load the full stylesheet non-blocking: preload+onload with noscript fallback -->
-    <link rel="preload" as="style" href="/styles/global.css" onload="this.rel='stylesheet'">
+    <link rel="preload" href="/styles/global.css" as="style" onload="this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/styles/global.css"></noscript>
   </head>
   <body>
