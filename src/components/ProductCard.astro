@@ -15,16 +15,16 @@ export interface Props {
 const { title, image, price, rating, reviews, link, highlight, pros } = Astro.props;
 ---
 
-<div class="product-card bg-white border border-gray-200 rounded-xl p-6 relative shadow-sm hover:shadow-lg transition-transform hover:-translate-y-1">
+<div class="product-card bg-white border border-gray-200 rounded-xl p-6 relative shadow-sm hover:shadow-lg transform transition-transform hover:-translate-y-1">
   {highlight && <div class="product-badge absolute -top-2 right-4 bg-gradient-to-r from-amber-400 to-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full">{highlight}</div>}
-  
+
   <div class="product-image-wrapper bg-gray-50 rounded-md p-6 mb-4 text-center">
     <picture>
       <source type="image/webp" srcset={image.replace(/\.(jpg|png)$/i, '.webp')} />
       <img src={image} alt={title} class="product-image max-h-48 mx-auto object-contain" loading="lazy" decoding="async" />
     </picture>
   </div>
-  
+
   <div class="product-body flex flex-col gap-3">
     <h3 class="product-title text-lg font-semibold text-gray-900">{title}</h3>
     
@@ -43,135 +43,12 @@ const { title, image, price, rating, reviews, link, highlight, pros } = Astro.pr
       </ul>
     )}
     
-    <a href={link} target="_blank" rel="nofollow sponsored" class="product-cta mt-4 inline-block bg-accent text-white text-center py-3 px-4 rounded-md font-semibold shadow-sm hover:bg-green-700">Ver en Amazon →</a>
+    <a href={link} target="_blank" rel="nofollow sponsored" class="product-cta mt-4 inline-block bg-[color:var(--color-accent-primary)] text-white text-center py-3 px-4 rounded-md font-semibold shadow-sm hover:bg-green-700">Ver en Amazon →</a>
   </div>
 </div>
 
+<!-- Keep minimal fallback styles for non-Tailwind environments -->
 <style>
-  .product-card {
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-    position: relative;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  }
-  
-  .product-card:hover {
-    box-shadow: 0 4px 12px rgba(5,150,105,0.12);
-    border-color: #375A47;
-  }
-  
-  .product-badge {
-    position: absolute;
-    top: -10px;
-    right: 1rem;
-    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.35rem 0.75rem;
-    border-radius: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 2px 8px rgba(251,191,36,0.4);
-  }
-  
-  .product-image-wrapper {
-    text-align: center;
-    margin-bottom: 1.25rem;
-    background: #f9fafb;
-    border-radius: 8px;
-    padding: 1.5rem;
-  }
-  
-  .product-image {
-    max-height: 200px;
-    width: auto;
-    margin: 0 auto;
-    object-fit: contain;
-  }
-  
-  .product-body {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  
-  .product-title {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #111827;
-    line-height: 1.4;
-    margin: 0;
-  }
-  
-  .product-rating {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-  }
-  
-  .stars {
-    color: #fbbf24;
-    letter-spacing: 1px;
-  }
-  
-  .reviews {
-    color: #6b7280;
-    font-size: 0.85rem;
-  }
-  
-  .product-price {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #047857;
-  }
-  
-  .product-pros {
-    list-style: none;
-    padding: 0;
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-    color: #374151;
-  }
-  
-  .product-pros li {
-    padding: 0.25rem 0;
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  
-  .product-cta {
-    background: #375A47;
-    color: #fff;
-    text-align: center;
-    padding: 0.875rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.2s;
-    margin-top: 0.5rem;
-    box-shadow: 0 2px 8px rgba(5,150,105,0.25);
-  }
-  
-  .product-cta:hover {
-    background: #047857;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(5,150,105,0.35);
-    color: #fff;
-  }
-  
-  @media (max-width: 640px) {
-    .product-card {
-      padding: 1.25rem;
-    }
-    
-    .product-image {
-      max-height: 160px;
-    }
-  }
+  .product-card{border-radius:12px}
+  .product-image{max-height:200px}
 </style>
