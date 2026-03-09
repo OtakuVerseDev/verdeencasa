@@ -59,7 +59,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site);
     <style>
       /* Critical focus styles kept inline for immediate accessibility */
       :focus:not(:focus-visible) { outline: none; }
-      :focus-visible { outline: 3px solid #059669; outline-offset: 3px; }
+      :focus-visible { outline: 3px solid var(--color-accent-primary); outline-offset: 3px; }
 
       /* Critical hero layout kernel to avoid layout shift on LCP */
       .hero { padding: 3rem 1.5rem; }
