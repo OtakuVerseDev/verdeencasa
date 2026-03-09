@@ -9,9 +9,10 @@
   --color-text-muted: #7A8B85;
   --color-text-inverse: #FAFAF8;
   
-  --color-accent-primary: #6B8E7F;
-  --color-accent-hover: #557566;
-  --color-accent-light: rgba(107, 142, 127, 0.08);
+  /* Accent colors adjusted for WCAG AA contrast versus #FAFAF8 background */
+  --color-accent-primary: #375A47; /* replacement for #059669 */
+  --color-accent-hover: #244436; /* darker hover state */
+  --color-accent-light: rgba(55, 90, 71, 0.08);
   
   --color-border: rgba(107, 142, 127, 0.12);
   --color-border-hover: #6B8E7F;
@@ -75,7 +76,7 @@ header .inner {
   font-size: 1.75rem;
 }
 
-.logo span {
+  .logo span {
   color: var(--color-accent-primary);
 }
 
