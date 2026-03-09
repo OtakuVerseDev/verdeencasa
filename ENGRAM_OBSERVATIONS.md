@@ -51,3 +51,13 @@ End of observation.
 - **Why:** Mejorar velocidad de desarrollo, reducir CSS no utilizado y mejorar consistencia visual con utilidades; además preparar optimizaciones de LCP y preload de recursos.
 - **Where:** `package.json`, `tailwind.config.cjs`, `postcss.config.cjs`, `src/styles/global.css`, `src/styles/tailwind.css`, `src/styles/fonts.css`, `src/layouts/BaseLayout.astro`, `src/components/Hero.astro`, `src/components/ProductCard.astro`, `src/components/ProductTable.astro`, `.github/workflows/lighthouse-ci.yml`.
 - **Learned:** `mem_session_summary` API no disponible in this environment; persisto este resumen en este archivo. Build and Lighthouse steps will be attempted next; if network or Chrome not available, I will add instructions and placeholders.
+
+---
+
+## Bumped tailwindcss to 3.4.19 and retried install
+- **Type:** config
+- **Scope:** project
+- **What:** Updated `devDependencies.tailwindcss` in `package.json` from `^3.5.0` to `^3.4.19`, ensured `postcss` and `autoprefixer` are present, ran `npm install` (lockfile updated) and `npm run build` successfully.
+- **Why:** The previously-specified `^3.5.0` had no matching version in the npm registry for this environment; pinning to the latest published 3.x release allowed installation and a successful build.
+- **Where:** `package.json`, `package-lock.json` (updated), local git commit `chore(deps): bump tailwindcss to 3.4.19` recorded on current branch.
+- **Learned:** `npm ci` failed because the lockfile was out of sync after changing `package.json`; a fallback `npm install` updated the lockfile. `mem_save` API was not available, so this observation is appended here.
