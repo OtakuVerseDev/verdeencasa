@@ -19,7 +19,10 @@ const { title, image, price, rating, reviews, link, highlight, pros } = Astro.pr
   {highlight && <div class="product-badge">{highlight}</div>}
   
   <div class="product-image-wrapper">
-    <img src={image} alt={title} class="product-image" loading="lazy" />
+    <picture>
+      <source type="image/webp" srcset={image.replace(/\.(jpg|png)$/i, '.webp')} />
+      <img src={image} alt={title} class="product-image" loading="lazy" decoding="async" />
+    </picture>
   </div>
   
   <div class="product-body">

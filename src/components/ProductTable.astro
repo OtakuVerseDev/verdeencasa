@@ -30,7 +30,10 @@ const { title = "Productos recomendados", products } = Astro.props;
         )}
         
         <div class="column-image">
-          <img src={product.image} alt={product.name} loading="lazy" />
+          <picture>
+            <source type="image/webp" srcset={product.image.replace(/\.(jpg|png)$/i, '.webp')} />
+            <img src={product.image} alt={product.name} loading="lazy" decoding="async" />
+          </picture>
         </div>
         
         <h4 class="column-name">{product.name}</h4>

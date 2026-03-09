@@ -1,0 +1,4 @@
+/* Inline-critical addon for hero (used to minimize CLS and LCP delay) */
+.hero{ padding:3rem 1.5rem }
+.hero h1{ font-size:2.25rem; line-height:1.15 }
+.hero-right img{ display:block; max-width:100%; height:auto }

@@ -1,43 +1,19 @@
-/* Global styles extracted from BaseLayout.astro to reduce render-blocking */
-/* Skip link & focus-visible styles */
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-.skip-link:focus {
-  position: fixed;
-  left: 1rem;
-  top: 1rem;
-  width: auto;
-  height: auto;
-  background: #064e3b;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  z-index: 9999;
-}
+/* Import Tailwind utilities first (if built) then keep small fallbacks */
+@import './tailwind.css';
 
-:focus:not(:focus-visible) { outline: none; }
-:focus-visible { outline: 3px solid #375A47; outline-offset: 3px; }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-/* Minimal global base rules */
-body { font-family: 'Inter', system-ui, sans-serif; background: #fafafa; color: #0a0a0a; line-height: 1.7; font-size: 1rem; }
-/* Use an accessible accent color for links and focus outlines */
-a { color: #375A47; text-decoration: none; transition: color 0.2s; }
-a:hover { color: #2e4e3f; }
-img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
-
-/* Focus-visible for interactive controls (keyboard users) */
-button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
-  outline: 3px solid #375A47;
-  outline-offset: 3px;
-}
+/* Fallbacks and small global helpers kept for progressive enhancement */
+:root{ --color-accent-primary: #375A47; }
+.skip-link{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+.skip-link:focus{ position:fixed; left:1rem; top:1rem; width:auto; height:auto; background:#064e3b; color:#fff; padding:0.5rem 1rem; border-radius:6px; z-index:9999; }
+:focus:not(:focus-visible){ outline:none }
+:focus-visible{ outline:3px solid var(--color-accent-primary); outline-offset:3px }
+*,*::before,*::after{ box-sizing:border-box;margin:0;padding:0 }
+html{ scroll-behavior:smooth }
+body{ font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#fafafa; color:#0a0a0a; line-height:1.7; font-size:1rem }
+a{ color:var(--color-accent-primary); text-decoration:none; transition:color .2s }
+a:hover{ color:#2e4e3f }
+img{ max-width:100%; height:auto; display:block; border-radius:8px }
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ outline:3px solid var(--color-accent-primary); outline-offset:3px }
 
 /* Keep additional global layout rules here (non-critical)
    These can be trimmed later if Lighthouse flags unused CSS. */

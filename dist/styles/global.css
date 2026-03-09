@@ -22,6 +22,6 @@
 }
 
 :focus:not(:focus-visible) { outline: none; }
-:focus-visible { outline: 3px solid #059669; outline-offset: 3px; }
+:focus-visible { outline: 3px solid #375A47; outline-offset: 3px; }
 
 /* Additional components and page-specific styles live in their respective files */
