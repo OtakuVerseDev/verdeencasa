@@ -19,43 +19,41 @@ export interface Props {
 const { title = "Productos recomendados", products } = Astro.props;
 ---
 
-<div class="product-table-wrapper">
-  <h3 class="table-title">{title}</h3>
+<div class="product-table-wrapper bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-100 rounded-2xl p-6 my-8">
+  <h3 class="table-title text-center text-2xl font-bold text-green-900 mb-6">{title}</h3>
   
-  <div class="products-grid">
+  <div class="products-grid grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
     {products.map(product => (
-      <div class="product-column">
+      <div class="product-column bg-white rounded-xl p-5 text-center relative flex flex-col">
         {product.highlight && (
-          <div class="column-badge">{product.highlight}</div>
+          <div class="column-badge absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">{product.highlight}</div>
         )}
         
-        <div class="column-image">
+        <div class="column-image bg-gray-50 rounded-md p-4 mb-3 h-44 flex items-center justify-center">
           <picture>
             <source type="image/webp" srcset={product.image.replace(/\.(jpg|png)$/i, '.webp')} />
-            <img src={product.image} alt={product.name} loading="lazy" decoding="async" />
+            <img src={product.image} alt={product.name} loading="lazy" decoding="async" class="max-h-full max-w-full object-contain" />
           </picture>
         </div>
         
-        <h4 class="column-name">{product.name}</h4>
+        <h4 class="column-name text-base font-semibold text-gray-900 mb-2 min-h-[2.6em]">{product.name}</h4>
         
-        <div class="column-rating">
-          <span class="stars">{'★'.repeat(product.rating)}{'☆'.repeat(5 - product.rating)}</span>
+        <div class="column-rating mb-2">
+          <span class="stars text-amber-400">{'★'.repeat(product.rating)}{'☆'.repeat(5 - product.rating)}</span>
         </div>
         
-        <div class="column-price">{product.price}</div>
+        <div class="column-price text-xl font-extrabold text-green-700 mb-3">{product.price}</div>
         
-        <ul class="column-pros">
-          {product.pros.map(pro => <li>✓ {pro}</li>)}
+        <ul class="column-pros text-left text-sm text-gray-700 mb-4 flex-grow">
+          {product.pros.map(pro => <li class="py-1">✓ {pro}</li>)}
         </ul>
         
-        <a href={product.link} target="_blank" rel="nofollow sponsored" class="column-cta">
-          Ver en Amazon
-        </a>
+        <a href={product.link} target="_blank" rel="nofollow sponsored" class="column-cta mt-auto bg-accent text-white py-2 px-3 rounded-md font-semibold shadow-sm hover:bg-green-700">Ver en Amazon</a>
       </div>
     ))}
   </div>
   
-  <p class="disclaimer">
+  <p class="disclaimer text-center text-sm text-gray-600 italic mt-6">
     💡 Los precios pueden variar. Última actualización: {new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long' })}.
   </p>
 </div>

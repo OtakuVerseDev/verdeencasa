@@ -1,9 +1,11 @@
-This folder should contain self-hosted font files for Inter and Playfair Display.
-If the environment cannot download fonts automatically, place the following files here:
+Fonts not included in repository due to size/network constraints.
 
-- Inter-Variable.woff2 (preferred variable / subset)
-- Inter-Regular.woff2 (fallback)
-- PlayfairDisplay-Regular.woff2
-- PlayfairDisplay-Bold.woff2
+To add Playfair Display and Inter variable fonts, download the following files into this directory:
 
-To fetch from Google Fonts manually, use the CSS in src/styles/fonts.css as reference and download the .woff2 files from fonts.gstatic.com.
+Inter (variable/woff2):
+curl -L -o public/fonts/Inter-Variable.woff2 "https://rsms.me/inter/font-files/Inter-3.19/Inter-3.19.3.var.woff2"
+
+Playfair Display (regular & bold woff2):
+curl -L -o public/fonts/PlayfairDisplay-Regular.woff2 "https://github.com/google/fonts/raw/main/ofl/playfairdisplay/PlayfairDisplay-Regular.ttf"
+
+If curl is unavailable, manually download from Google Fonts repository and convert to woff2.

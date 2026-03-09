@@ -16,3 +16,7 @@
 }
 
 /* Fallback local font stack used in global.css */
+
+/* Ensure Inter variable is used for body and Playfair for headings */
+html,body{ font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+h1,h2,h3,.font-display{ font-family: 'Playfair Display', serif }
