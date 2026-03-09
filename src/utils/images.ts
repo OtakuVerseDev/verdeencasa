@@ -46,9 +46,10 @@ export function getArticleImage(slug: string): string {
   // Return WebP first for modern browsers by providing webp path when possible
   const remote = articleImages[slug];
   if (remote && remote.includes('images.unsplash.com')) {
-    // create webp variant using &fm=webp which Unsplash supports
-    const webp = remote + '&fm=webp';
-    return webp;
+    // create webp variant using &fm=webp which Unsplash supports and provide srcset-friendly variants
+    const base = remote.split('?')[0];
+    const srcset = `${base}?w=800&q=80&fm=webp 800w, ${base}?w=1200&q=80&fm=webp 1200w`;
+    return srcset;
   }
-  return articleImages[slug] || localMap['default'] || 'https://images.unsplash.com/photo-1463154545680-d59320fd685d?w=800&q=80&fm=webp';
+  return articleImages[slug] || localMap['default'] || '/og/hero-1200x630.webp';
 }
