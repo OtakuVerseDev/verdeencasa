@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { getArticleImage } from '../utils/images';
+import Hero from '../components/Hero.astro';
 
 const allPosts = await getCollection('blog');
 const recentPosts = allPosts.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()).slice(0, 6);
@@ -18,10 +19,6 @@ const categories = [
   description="Aprende a cuidar plantas de interior con +30 guías completas. Soluciones a hojas amarillas, riego, luz, plagas. Todo en español. Consejos prácticos para principiantes y expertos."
 >
   <!-- Hero -->
-  ---
-  import Hero from '../components/Hero.astro';
-  ---
-
   <Hero title="🌿 Cómo cuidar plantas de interior: guía completa 2026" lead="Más de 30 guías paso a paso para cuidar plantas de interior. Aprende a resolver hojas amarillas, riego correcto, trasplante, plagas y mucho más. Todo en español y gratis." />
 
   <!-- Por qué confiar en nosotros -->
