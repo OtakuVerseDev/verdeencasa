@@ -2,12 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Project utilities and fallbacks */
-:root{
-  --color-accent-primary: #375A47;
-}
-
-/* Small fallback for legacy components that still use .btn etc. */
-.btn{ @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md font-semibold }
-.btn-primary{ @apply bg-accent text-white }
-.btn-secondary{ @apply bg-white border border-gray-200 text-accent }
+/* Minimal theme tokens bridging legacy CSS */
+:root{ --color-accent-primary:#375A47 }

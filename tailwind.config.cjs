@@ -2,20 +2,18 @@
 module.exports = {
   content: [
     './src/**/*.{astro,html,js,ts,jsx,tsx}',
-    './public/**/*.html'
+    './src/**/*',
   ],
   theme: {
     extend: {
       colors: {
-        accent: {
-          DEFAULT: '#375A47'
-        }
+        'accent-primary': 'var(--color-accent-primary)',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial'],
-        display: ['"Playfair Display"', 'serif']
-      }
-    }
+        display: ['Playfair Display', 'serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+      },
+    },
   },
-  plugins: []
-}
+  plugins: [],
+};
