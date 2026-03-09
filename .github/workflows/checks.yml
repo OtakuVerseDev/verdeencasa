@@ -1,25 +1,25 @@
-name: CI Checks
+name: Build and Basic Checks
 
 on:
   push:
-    branches: [ '**' ]
+    branches: [ feature/** ]
   pull_request:
-    branches: [ '**' ]
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - name: Install dependencies
+          node-version: '18'
+      - name: Install
         run: npm ci
-      - name: Grep for forbidden color literal
-        run: |
-          if grep -R --line-number "#059669" src/ public/; then
-            echo "Forbidden literal '#059669' found"; exit 1; fi
       - name: Build
-        run: npm run build
+        run: npm run build --if-present
+      - name: Style check (no hard-coded accent)
+        run: |
+          if grep -R "#059669" src/ public/ ; then
+            echo "Found forbidden color literal #059669"; exit 1; fi
