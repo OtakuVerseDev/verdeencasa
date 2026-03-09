@@ -41,3 +41,13 @@ Apply the "Option 1" accessibility fix: replace the low-contrast green (#059669)
 ---
 
 End of observation.
+
+---
+
+## Session: Tailwind migration start
+- **Type:** decision
+- **Scope:** project
+- **What:** Iniciada migración a Tailwind v3: añadidos `tailwind.config.cjs`, `postcss.config.cjs`, `src/styles/tailwind.css`, y cambios para integrar Tailwind en `src/styles/global.css`. Se añadieron placeholders para fuentes self-hosted y reglas `@font-face` en `src/styles/fonts.css`.
+- **Why:** Mejorar velocidad de desarrollo, reducir CSS no utilizado y mejorar consistencia visual con utilidades; además preparar optimizaciones de LCP y preload de recursos.
+- **Where:** `package.json`, `tailwind.config.cjs`, `postcss.config.cjs`, `src/styles/global.css`, `src/styles/tailwind.css`, `src/styles/fonts.css`, `src/layouts/BaseLayout.astro`, `src/components/Hero.astro`, `src/components/ProductCard.astro`, `src/components/ProductTable.astro`, `.github/workflows/lighthouse-ci.yml`.
+- **Learned:** `mem_session_summary` API no disponible in this environment; persisto este resumen en este archivo. Build and Lighthouse steps will be attempted next; if network or Chrome not available, I will add instructions and placeholders.
