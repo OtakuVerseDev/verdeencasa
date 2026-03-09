@@ -1,0 +1,18 @@
+---
+import HeroActions from './HeroActions.astro';
+const { title = 'VerdeEnCasa — Guía completa de cuidado de plantas de interior', lead = '' } = Astro.props;
+---
+
+<section class="hero hero-component" aria-labelledby="hero-heading">
+  <div class="hero-inner container--wide" style="display:grid; grid-template-columns: 1fr 320px; gap:2rem; align-items:center;">
+    <div class="hero-left">
+      <h1 id="hero-heading">{title}</h1>
+      {lead && <p class="hero-lead">{lead}</p>}
+      <HeroActions />
+    </div>
+
+    <div class="hero-right" role="img" aria-hidden="true" style="justify-self:end;">
+      <img src="/og/hero-1200x630.webp" alt="" width="600" height="315" />
+    </div>
+  </div>
+</section>

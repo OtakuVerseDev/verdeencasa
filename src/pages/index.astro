@@ -18,16 +18,11 @@ const categories = [
   description="Aprende a cuidar plantas de interior con +30 guías completas. Soluciones a hojas amarillas, riego, luz, plagas. Todo en español. Consejos prácticos para principiantes y expertos."
 >
   <!-- Hero -->
-  <section class="hero">
-    <div>
-      <h1>🌿 Cómo cuidar plantas de interior: guía completa 2026</h1>
-      <p>Más de 30 guías paso a paso para cuidar plantas de interior. Aprende a resolver hojas amarillas, riego correcto, trasplante, plagas y mucho más. Todo en español y gratis.</p>
-      <div class="hero-cta">
-        <a href="/guias/" class="btn btn-primary">Ver guías de cuidado</a>
-        <a href="/problemas/" class="btn btn-secondary">Resolver un problema</a>
-      </div>
-    </div>
-  </section>
+  ---
+  import Hero from '../components/Hero.astro';
+  ---
+
+  <Hero title="🌿 Cómo cuidar plantas de interior: guía completa 2026" lead="Más de 30 guías paso a paso para cuidar plantas de interior. Aprende a resolver hojas amarillas, riego correcto, trasplante, plagas y mucho más. Todo en español y gratis." />
 
   <!-- Por qué confiar en nosotros -->
   <section style="padding: 4rem 0 2rem; background: #fff;">
