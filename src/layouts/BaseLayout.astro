@@ -53,6 +53,36 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site);
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <style is:global>
+      /* Skip link & focus-visible styles */
+      .skip-to-content {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .skip-to-content:focus {
+        position: fixed;
+        left: 1rem;
+        top: 1rem;
+        width: auto;
+        height: auto;
+        background: #064e3b;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        z-index: 9999;
+      }
+
+      /* focus-visible polyfill-ish styles for keyboard focus */
+      :focus:not(:focus-visible) {
+        outline: none;
+      }
+      :focus-visible {
+        outline: 3px solid #059669;
+        outline-offset: 3px;
+      }
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
       html { scroll-behavior: smooth; }
       body {
@@ -411,6 +441,8 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site);
     </style>
   </head>
   <body>
+    <!-- Skip to content for keyboard users -->
+    <a href="#main-content" class="skip-to-content">Saltar al contenido</a>
     <header>
       <div class="inner">
         <a href="/" class="logo">
@@ -428,7 +460,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site);
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <slot />
     </main>
 

@@ -39,5 +39,9 @@ export const articleImages: Record<string, string> = {
 };
 
 export function getArticleImage(slug: string): string {
-  return articleImages[slug] || 'https://images.unsplash.com/photo-1463154545680-d59320fd685d?w=800&q=80';
+  // Prefer local optimized images if available in public/og, fallback to configured Unsplash
+  const localMap: Record<string, string> = {
+    'default': '/og/hero-1200x630.webp',
+  };
+  return articleImages[slug] || localMap['default'] || 'https://images.unsplash.com/photo-1463154545680-d59320fd685d?w=800&q=80';
 }

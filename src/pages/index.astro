@@ -74,8 +74,10 @@ const categories = [
       <div class="cards-grid">
         {recentPosts.map(post => (
           <a href={`/blog/${post.id}/`} style="text-decoration:none;">
-            <div class="card">
-              <div class="card-image" style={`background-image: url('${getArticleImage(post.id)}'); background-size: cover; background-position: center; height: 200px; border-radius: 12px 12px 0 0;`}></div>
+          <div class="card">
+               <div class="card-image">
+                 <img src={getArticleImage(post.id)} alt={post.data.title} loading="lazy" width="800" height="400" style="object-fit:cover;height:200px;border-radius:12px 12px 0 0;display:block;" />
+               </div>
               <div class="card-body">
                 <span class="card-tag">{post.data.category}</span>
                 <p class="card-title">{post.data.title}</p>
