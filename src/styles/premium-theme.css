@@ -1,7 +1,7 @@
 /* Premium Editorial Color System */
-/* Variables removed from here; premium-theme now consumes tokens from src/styles/tokens.css */
-
-/* Ensure premium-theme uses token-based variables (already present in the file via var(...) references) */
+/* premium-theme now consumes variables from src/styles/tokens.css */
+/* No exclusive variables were required; premium-theme uses var(...) references already present in this file.
+   If future exclusive theme-only variables are needed, move them to tokens.css with a comment noting their scope. */
 
 /* Global Resets with Premium Colors */
 body {
