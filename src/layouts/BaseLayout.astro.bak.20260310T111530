@@ -1,0 +1,8 @@
+---
+// backup of src/layouts/BaseLayout.astro before moving CSS import
+// Timestamp: 2026-03-10T11:15:30Z
+
+---
+import "../styles/global.css";
+
+<! -- backup placeholder; actual file contents are available in repo -- >

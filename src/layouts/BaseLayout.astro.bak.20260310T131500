@@ -1,0 +1,121 @@
+---
+// src/layouts/BaseLayout.astro
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+}
+
+const { title, description, canonical, image = '/og/hero-1200x630.webp' } = Astro.props;
+const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site);
+---
+
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <title>{title}</title>
+
+    <!-- Self-hosted fonts: preload font files (crossorigin) and load fonts stylesheet -->
+    <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/PlayfairDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/styles/fonts.css" as="style">
+    <link rel="stylesheet" href="/styles/fonts.css" />
+    <!-- Temporary: ensure preview/build loads the precompiled Tailwind CSS in /public/styles -->
+    <link rel="stylesheet" href="/styles/global.css" />
+
+    <!-- Preload Hero image (LCP) to improve LCP timing -->
+    <link rel="preload" as="image" href="/og/hero-1200x630.webp">
+
+    <!-- Small critical CSS: hero LCP kernel and focus helpers -->
+    <style>
+      /* Critical focus styles kept inline for immediate accessibility */
+      :focus:not(:focus-visible) { outline: none; }
+      :focus-visible { outline: 3px solid var(--color-accent-primary); outline-offset: 3px; }
+
+      /* Critical hero layout kernel to avoid layout shift on LCP */
+      .hero { padding: 3rem 1.5rem; }
+      .hero h1 { font-size: 2.25rem; line-height: 1.15; }
+      .hero-right img { display: block; max-width: 100%; height: auto; }
+    </style>
+
+    <!-- Load the full stylesheet via Astro import. Preload NOSCRIPT removed in favor of module CSS import -->
+  </head>
+  <body>
+    <!-- Skip to content for keyboard users -->
+    <a href="#main-content" class="skip-link">Saltar al contenido</a>
+    <header>
+      <div class="inner">
+        <a href="/" class="logo">
+          <span class="logo-icon">🌿</span>
+          Verde<span>EnCasa</span>
+        </a>
+        <nav>
+          <a href="/blog/">Blog</a>
+          <a href="/guias/">Guías</a>
+          <a href="/problemas/">Problemas</a>
+          <a href="/tipos/">Plantas</a>
+          <a href="/recursos/">Recursos</a>
+          <a href="/sobre-nosotros/">Nosotros</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div>
+          <h3>Categorías</h3>
+          <ul>
+            <li><a href="/guias/">Guías de cuidado</a></li>
+            <li><a href="/problemas/">Problemas y enfermedades</a></li>
+            <li><a href="/tipos/">Tipos de plantas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Información</h3>
+          <ul>
+            <li><a href="/sobre-nosotros/">Sobre nosotros</a></li>
+            <li><a href="/recursos/">Recursos y herramientas</a></li>
+            <li><a href="/politica-de-privacidad/">Política de privacidad</a></li>
+            <li><a href="/aviso-legal/">Aviso legal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© {new Date().getFullYear()} VerdeEnCasa. Todos los derechos reservados.</p>
+        <p style="margin-top:0.5rem; font-size:0.8rem;">VerdeEnCasa es participante en el Programa de Afiliados de Amazon EU. Como Afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables.</p>
+      </div>
+    </footer>
+  </body>
+</html>

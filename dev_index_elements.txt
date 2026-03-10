@@ -1,0 +1,89 @@
+<a href="#main-content" class="skip-link" data-astro-cid-37fxchfa data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/layouts/BaseLayout.astro" data-astro-source-loc="72:47">
+<div class="inner" data-astro-cid-37fxchfa data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/layouts/BaseLayout.astro" data-astro-source-loc="74:26">
+<a href="/" class="logo" data-astro-cid-37fxchfa data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/layouts/BaseLayout.astro" data-astro-source-loc="75:34">
+<span class="logo-icon" data-astro-cid-37fxchfa data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/layouts/BaseLayout.astro" data-astro-source-loc="76:35">
+<section class="hero bg-white" aria-labelledby="hero-heading" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/components/Hero.astro" data-astro-source-loc="6:63">
+<div class="max-w-7xl mx-auto grid gap-6 lg:grid-cols-2 items-center px-6 py-12" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/components/Hero.astro" data-astro-source-loc="7:84">
+<div class="hero-left" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/components/Hero.astro" data-astro-source-loc="8:28">
+<h1 id="hero-heading" class="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight text-gray-900" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/components/Hero.astro" data-astro-source-loc="9:111">
+<p class="mt-4 text-lg text-gray-700" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/components/Hero.astro" data-astro-source-loc="10:54">
+<div class="mt-6" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/components/Hero.astro" data-astro-source-loc="11:26">
+<div class="hero-actions" role="group" aria-label="Hero actions" style="display:flex; gap:0.75rem; margin-top:1rem;" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/components/HeroActions.astro" data-astro-source-loc="3:118">
+<a class="btn btn-primary" href="/guias/" role="button" aria-label="Explorar guías" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/components/HeroActions.astro" data-astro-source-loc="4:87">
+<a class="btn btn-secondary" href="/problemas/" role="button" aria-label="Resolver un problema" style="backdrop-filter: blur(6px);" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/components/HeroActions.astro" data-astro-source-loc="10:135">
+<div class="hero-right justify-self-end" role="img" aria-hidden="true" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/components/Hero.astro" data-astro-source-loc="14:76">
+<img src="/og/hero-1200x630.webp" alt="" width="1200" height="630" loading="eager" decoding="async" fetchpriority="high" class="w-full h-auto rounded-lg shadow-lg" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/components/Hero.astro" data-astro-source-loc="18:10">
+<div class="container--wide" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="26:34">
+<div class="features-grid" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="28:34">
+<div class="feature-box" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="29:34">
+<div class="feature-icon" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="30:37">
+<div class="feature-box" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="34:34">
+<div class="feature-icon" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="35:37">
+<div class="feature-box" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="39:34">
+<div class="feature-icon" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="40:37">
+<div class="container--wide" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="50:34">
+<div class="cards-grid" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="53:31">
+<div class="card" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="56:31">
+<div class="card-image" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="57:39">
+<div class="card-body" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="58:38">
+<h3 class="card-title" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="59:40">
+<p class="card-excerpt" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="60:41">
+<div class="card" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="56:31">
+<div class="card-image" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="57:39">
+<div class="card-body" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="58:38">
+<h3 class="card-title" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="59:40">
+<p class="card-excerpt" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="60:41">
+<div class="card" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="56:31">
+<div class="card-image" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="57:39">
+<div class="card-body" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="58:38">
+<h3 class="card-title" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="59:40">
+<p class="card-excerpt" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="60:41">
+<div class="container--wide" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="71:34">
+<div class="cards-grid" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="74:31">
+<div class="card" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="77:29">
+<div class="card-image" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="78:40">
+<div class="card-body" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="81:38">
+<span class="card-tag" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="82:40">
+<p class="card-title" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="83:39">
+<p class="card-excerpt" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="84:41">
+<div class="card" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="77:29">
+<div class="card-image" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="78:40">
+<div class="card-body" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="81:38">
+<span class="card-tag" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="82:40">
+<p class="card-title" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="83:39">
+<p class="card-excerpt" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="84:41">
+<div class="card" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="77:29">
+<div class="card-image" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="78:40">
+<div class="card-body" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="81:38">
+<span class="card-tag" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="82:40">
+<p class="card-title" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="83:39">
+<p class="card-excerpt" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="84:41">
+<div class="card" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="77:29">
+<div class="card-image" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="78:40">
+<div class="card-body" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="81:38">
+<span class="card-tag" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="82:40">
+<p class="card-title" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="83:39">
+<p class="card-excerpt" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="84:41">
+<div class="card" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="77:29">
+<div class="card-image" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="78:40">
+<div class="card-body" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="81:38">
+<span class="card-tag" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="82:40">
+<p class="card-title" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="83:39">
+<p class="card-excerpt" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="84:41">
+<div class="card" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="77:29">
+<div class="card-image" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="78:40">
+<div class="card-body" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="81:38">
+<span class="card-tag" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="82:40">
+<p class="card-title" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="83:39">
+<p class="card-excerpt" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="84:41">
+<a href="/problemas/" class="btn btn-primary" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="98:53">
+<div class="container" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="104:28">
+<div class="container" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="144:28">
+<div class="faq-item" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="149:31">
+<div class="faq-item" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="154:31">
+<div class="faq-item" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="159:31">
+<div class="faq-item" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="164:31">
+<div class="faq-item" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="169:31">
+<div class="faq-item" data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/pages/index.astro" data-astro-source-loc="174:31">
+<div class="footer-content" data-astro-cid-37fxchfa data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/layouts/BaseLayout.astro" data-astro-source-loc="95:35">
+<div class="footer-bottom" data-astro-cid-37fxchfa data-astro-source-file="C:/Users/danie/Documents/AI/verdeencasa/src/layouts/BaseLayout.astro" data-astro-source-loc="114:34">

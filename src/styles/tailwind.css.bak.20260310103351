@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal theme tokens bridging legacy CSS */
+:root{ --color-accent-primary:#375A47 }

@@ -1,0 +1,6 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/layouts/BaseLayout.astro?astro&type=style&index=0&lang.css");import { updateStyle as __vite__updateStyle, removeStyle as __vite__removeStyle } from "/@vite/client"
+const __vite__id = "C:/Users/danie/Documents/AI/verdeencasa/src/layouts/BaseLayout.astro?astro&type=style&index=0&lang.css"
+const __vite__css = "[data-astro-cid-37fxchfa]:focus:not(:focus-visible){outline:none}[data-astro-cid-37fxchfa]:focus-visible{outline:3px solid var(--color-accent-primary);outline-offset:3px}.hero[data-astro-cid-37fxchfa]{padding:3rem 1.5rem}.hero[data-astro-cid-37fxchfa] h1[data-astro-cid-37fxchfa]{font-size:2.25rem;line-height:1.15}.hero-right[data-astro-cid-37fxchfa] img[data-astro-cid-37fxchfa]{display:block;max-width:100%;height:auto}"
+__vite__updateStyle(__vite__id, __vite__css)
+import.meta.hot.accept()
+import.meta.hot.prune(() => __vite__removeStyle(__vite__id))

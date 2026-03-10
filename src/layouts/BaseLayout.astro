@@ -9,7 +9,9 @@ export interface Props {
 
 const { title, description, canonical, image = '/og/hero-1200x630.webp' } = Astro.props;
 const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site);
+import "../styles/tailwind.css";
 ---
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -47,6 +49,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site);
     <link rel="preload" href="/fonts/PlayfairDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/styles/fonts.css" as="style">
     <link rel="stylesheet" href="/styles/fonts.css" />
+    <!-- Temporary: ensure preview/build loads the precompiled Tailwind CSS in /public/styles -->
 
     <!-- Preload Hero image (LCP) to improve LCP timing -->
     <link rel="preload" as="image" href="/og/hero-1200x630.webp">
@@ -63,9 +66,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site);
       .hero-right img { display: block; max-width: 100%; height: auto; }
     </style>
 
-    <!-- Load the full stylesheet non-blocking: preload+onload with noscript fallback -->
-    <link rel="preload" href="/styles/global.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/styles/global.css"></noscript>
+    <!-- Load the full stylesheet via Astro import. Preload NOSCRIPT removed in favor of module CSS import -->
   </head>
   <body>
     <!-- Skip to content for keyboard users -->

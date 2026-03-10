@@ -1,0 +1,7 @@
+---
+// Backup of BaseLayout.astro before injecting CSS import
+// Created by OpenCode agent
+---
+
+*** Update File: src/layouts/BaseLayout.astro
+import "../styles/tailwind.css";
