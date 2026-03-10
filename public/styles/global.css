@@ -1,0 +1,12 @@
+/* Fallback public stylesheet to preserve compatibility with external previews
+   and previews that expect /styles/global.css. This file intentionally
+   contains only critical and safe rules and does not duplicate the full
+   source-of-truth in src/styles/tokens.css to avoid split-brain. */
+@import url('/styles/fonts.css');
+/* Minimal critical rules mirrored from src/styles/global.css */
+:root{--color-accent-primary:#375A47}
+html,body{height:100%}
+body{background:#fafafa;color:#0a0a0a;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}
+a{color:var(--color-accent-primary);text-decoration:none}
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:fixed;left:1rem;top:1rem;width:auto;height:auto;background:#064e3b;color:#fff;padding:0.5rem 1rem;border-radius:6px;z-index:9999}
