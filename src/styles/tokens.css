@@ -16,8 +16,8 @@
   --color-border: rgba(107, 142, 127, 0.12);
   --color-border-hover: #6B8E7F;
 
-  --font-serif: 'Playfair Display', serif;
-  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', serif;
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
 /* Notes:

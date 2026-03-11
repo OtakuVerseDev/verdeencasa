@@ -18,7 +18,7 @@ const categories = {
   description="Explora todas nuestras guías completas sobre el cuidado de plantas de interior. Más de 30 artículos con información detallada y consejos prácticos."
 >
   <div class="container" style="padding:4rem 0;">
-    <h1 style="font-size:2.5rem; font-weight:800; color:#0a0a0a; margin-bottom:1rem;">📚 Todas nuestras guías</h1>
+    <h1 style="font-size:2.5rem; font-weight:800; color:#0a0a0a; margin-bottom:1rem;">Todas nuestras guías</h1>
     <p style="font-size:1.1rem; color:#737373; margin-bottom:3rem;">
       {sortedPosts.length} artículos completos para ayudarte a cuidar tus plantas de interior como un experto
     </p>
@@ -27,9 +27,6 @@ const categories = {
       <section style="margin-bottom:4rem;">
         <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem;">
           <h2 style="font-size:1.75rem; font-weight:700; color:#0a0a0a; margin:0;">
-            {categoryName === 'Guías de cuidado' && '🌱 '}
-            {categoryName === 'Problemas y enfermedades' && '🔍 '}
-            {categoryName === 'Tipos de plantas' && '🪴 '}
             {categoryName}
           </h2>
           <span style="color:#737373; font-size:0.95rem;">{categoryPosts.length} artículos</span>
@@ -54,7 +51,7 @@ const categories = {
     <div style="margin-top:4rem; padding:2rem; background:linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%); border-radius:12px; text-align:center;">
       <h3 style="font-size:1.5rem; font-weight:700; color:#065f46; margin-bottom:1rem;">¿No encuentras lo que buscas?</h3>
       <p style="color:#047857; margin-bottom:1.5rem;">Escríbenos y lo añadiremos a nuestra lista de próximas guías</p>
-      <a href="/contacto/" class="btn btn-primary">Contáctanos</a>
+      <a href="/recursos/" class="btn btn-primary">Ver recursos</a>
     </div>
   </div>
 </BaseLayout>
@@ -113,4 +110,3 @@ const categories = {
     margin: 0;
   }
 </style>
-</BaseLayout>

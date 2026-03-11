@@ -10,8 +10,8 @@ module.exports = {
         'accent-primary': 'var(--color-accent-primary)',
       },
       fontFamily: {
-        display: ['Playfair Display', 'serif'],
-        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+        display: ['ui-serif', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
+        sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial'],
       },
     },
   },

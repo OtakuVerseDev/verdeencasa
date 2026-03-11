@@ -6,6 +6,7 @@ import Hero from '../components/Hero.astro';
 
 const allPosts = await getCollection('blog');
 const recentPosts = allPosts.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()).slice(0, 6);
+const postHref = (id: string) => `/blog/${id.replace(/\.md$/, '')}/`;
 
 const categories = [
   { name: 'Guías de cuidado', slug: 'guias', icon: '🌱', desc: 'Aprende paso a paso a cuidar cada tipo de planta' },
@@ -116,7 +117,7 @@ const categories = [
       <div class="articles-grid">
         {recentPosts.map(post => (
           <article class="article-card">
-            <a href={`/blog/${post.id}/`} class="article-link">
+            <a href={postHref(post.id)} class="article-link">
                 <div class="article-image">
                  <img src={getArticleImage(post.id)} alt={post.data.title} loading="lazy" decoding="async" width="800" height="400" />
                </div>
