@@ -1,0 +1,68 @@
+/* Semantic utility components for Tailwind (processed via @layer components)
+   Removed redundant `@tailwind components` here so Tailwind processes layers
+   from the main entrypoint `tailwind.css`. Backup created alongside original.
+*/
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-shadow;
+  }
+
+  .btn-primary {
+    background-color: var(--color-accent-primary);
+    color: white;
+    @apply shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-white border border-gray-200 text-gray-800 hover:bg-gray-50;
+  }
+
+  /* Card components */
+  .card {
+    @apply bg-white rounded-lg overflow-hidden shadow-sm;
+  }
+
+  .card-body {
+    @apply p-4;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0,1fr));
+    gap: 1rem;
+  }
+  @media (min-width: 768px) { .cards-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  @media (min-width: 1024px) { .cards-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+
+  .card-title { @apply text-lg font-semibold mb-2; }
+  .card-excerpt { @apply text-sm text-gray-600; }
+  .card-image { @apply block w-full h-48 object-cover bg-gray-100; }
+
+  /* Hero layout */
+  .hero { @apply grid gap-6 items-center; grid-template-columns: 1fr; padding: 2.5rem 1rem; }
+  @media (min-width: 768px) { .hero { grid-template-columns: 1fr 1fr; padding: 4rem 2rem; } }
+  .hero-left { @apply pr-4; }
+  .hero-right { @apply pl-4; }
+  .hero-actions { @apply mt-4 flex gap-3 flex-wrap; }
+
+  /* Footer */
+  .footer-content { @apply grid gap-6; grid-template-columns: 1fr; padding: 2rem 1rem; }
+  @media (min-width: 768px) { .footer-content { grid-template-columns: repeat(2, 1fr); padding: 3rem 2rem; } }
+  .footer-bottom { @apply text-sm text-gray-500 p-4 border-t border-gray-100; }
+
+  /* Accessibility: skip link */
+  .skip-link {
+    position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+  }
+  .skip-link:focus {
+    position: fixed; left: 1rem; top: 1rem; width: auto; height: auto; padding: 0.5rem 1rem; background: white; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  }
+
+  /* Logo */
+  .logo { @apply inline-flex items-center gap-2 font-semibold text-lg; }
+  .logo-icon { @apply text-2xl leading-none; }
+
+  .container--wide { @apply max-w-6xl mx-auto px-4; }
+}

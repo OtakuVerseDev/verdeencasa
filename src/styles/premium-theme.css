@@ -1,24 +1,7 @@
 /* Premium Editorial Color System */
-:root {
-  --color-bg-primary: #FAFAF8;
-  --color-bg-secondary: #FFFFFF;
-  --color-bg-accent: #1C3A2E;
-  
-  --color-text-primary: #1C3A2E;
-  --color-text-secondary: #4A5D56;
-  --color-text-muted: #7A8B85;
-  --color-text-inverse: #FAFAF8;
-  
-  --color-accent-primary: #6B8E7F;
-  --color-accent-hover: #557566;
-  --color-accent-light: rgba(107, 142, 127, 0.08);
-  
-  --color-border: rgba(107, 142, 127, 0.12);
-  --color-border-hover: #6B8E7F;
-  
-  --font-serif: 'Playfair Display', serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
-}
+/* premium-theme now consumes variables from src/styles/tokens.css */
+/* No exclusive variables were required; premium-theme uses var(...) references already present in this file.
+   If future exclusive theme-only variables are needed, move them to tokens.css with a comment noting their scope. */
 
 /* Global Resets with Premium Colors */
 body {
@@ -75,7 +58,7 @@ header .inner {
   font-size: 1.75rem;
 }
 
-.logo span {
+  .logo span {
   color: var(--color-accent-primary);
 }
 

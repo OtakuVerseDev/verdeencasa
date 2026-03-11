@@ -1,0 +1,27 @@
+/* Global styles copied to public for non-blocking load */
+/* Skip link & focus-visible styles */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-to-content:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  background: #064e3b;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  z-index: 9999;
+}
+
+:focus:not(:focus-visible) { outline: none; }
+:focus-visible { outline: 3px solid #375A47; outline-offset: 3px; }
+
+/* Additional components and page-specific styles live in their respective files */

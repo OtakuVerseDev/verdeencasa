@@ -1,0 +1,21 @@
+/* Fallback public stylesheet to preserve compatibility with external previews
+   and previews that expect /styles/global.css. This file intentionally
+   contains only critical and safe rules and does not duplicate the full
+   source-of-truth in src/styles/tokens.css to avoid split-brain. */
+/* Minimal critical rules mirrored from src/styles/global.css */
+:root{--color-accent-primary:#375A47}
+html,body{height:100%}
+body{background:#fafafa;color:#0a0a0a;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}
+a{color:var(--color-accent-primary);text-decoration:none}
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:fixed;left:1rem;top:1rem;width:auto;height:auto;background:#064e3b;color:#fff;padding:0.5rem 1rem;border-radius:6px;z-index:9999}
+.container,.container--wide{width:min(1200px,100% - 2rem);margin-inline:auto}
+header{position:sticky;top:0;z-index:30;background:rgba(250,250,248,.96);border-bottom:1px solid rgba(107,142,127,.15);backdrop-filter:blur(10px)}
+header .inner{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:1rem 0;width:min(1200px,100% - 2rem);margin:0 auto}
+nav{display:flex;gap:1.1rem;overflow:auto;white-space:nowrap}
+footer{background:#1c3a2e;color:#fafaf8;padding:2.5rem 1rem 1.5rem;margin-top:4rem}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;width:min(1200px,100% - 2rem);margin:0 auto}
+.footer-bottom{width:min(1200px,100% - 2rem);margin:1rem auto 0;padding-top:1rem;border-top:1px solid rgba(250,250,248,.2);opacity:.88}
+.features-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.feature-box,.faq-item{background:#fff;border:1px solid rgba(107,142,127,.15);border-radius:12px;padding:1rem}
+.card-tag{display:inline-block;padding:.2rem .5rem;border-radius:999px;background:rgba(55,90,71,.1);color:#375A47;font-size:.72rem;font-weight:600;text-transform:uppercase}

@@ -1,0 +1,26 @@
+/* Centralized CSS variables (tokens) — source of truth */
+:root {
+  --color-bg-primary: #FAFAF8;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-accent: #1C3A2E;
+
+  --color-text-primary: #1C3A2E;
+  --color-text-secondary: #4A5D56;
+  --color-text-muted: #7A8B85;
+  --color-text-inverse: #FAFAF8;
+
+  --color-accent-primary: #375A47;
+  --color-accent-hover: #244436;
+  --color-accent-light: rgba(55, 90, 71, 0.08);
+
+  --color-border: rgba(107, 142, 127, 0.12);
+  --color-border-hover: #6B8E7F;
+
+  --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', serif;
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Notes:
+   - Values chosen to match src/styles/premium-theme.css where differences existed.
+   - If other styles require additional variables, add them here following the same pattern.
+*/

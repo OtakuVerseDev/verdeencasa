@@ -5,14 +5,10 @@ export interface Props {
   description: string;
   canonical?: string;
   image?: string;
-  pageType?: 'website' | 'article';
 }
 
-const defaultSocialImage = 'https://images.unsplash.com/photo-1463320726281-696a485928c7?w=1200&q=80&fm=jpg';
-const { title, description, canonical, image = defaultSocialImage, pageType = 'website' } = Astro.props;
+const { title, description, canonical, image = '/og/hero-1200x630.webp' } = Astro.props;
 const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site);
-// Import the consolidated global entrypoint so both dev and build load the same stylesheet
-import "../styles/global.css";
 ---
 
 
@@ -27,11 +23,10 @@ import "../styles/global.css";
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={image} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:type" content={pageType} />
+    <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
 
     <!-- Twitter Card -->
@@ -39,7 +34,6 @@ import "../styles/global.css";
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
-    <meta name="theme-color" content="#1C3A2E" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -49,10 +43,16 @@ import "../styles/global.css";
 
     <title>{title}</title>
 
-    <!-- Local webfonts are not shipped in this repository; use resilient system stacks from CSS tokens -->
+    <!-- Self-hosted fonts: preload font files (crossorigin) and load fonts stylesheet -->
+    <link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/PlayfairDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/styles/fonts.css" as="style">
+    <link rel="stylesheet" href="/styles/fonts.css" />
+    <!-- Temporary: ensure preview/build loads the precompiled Tailwind CSS in /public/styles -->
+    <link rel="stylesheet" href="/styles/global.css" />
 
     <!-- Preload Hero image (LCP) to improve LCP timing -->
-    <link rel="preload" as="image" href={defaultSocialImage}>
+    <link rel="preload" as="image" href="/og/hero-1200x630.webp">
 
     <!-- Small critical CSS: hero LCP kernel and focus helpers -->
     <style>
@@ -119,3 +119,5 @@ import "../styles/global.css";
     </footer>
   </body>
 </html>
+
+(End of file - total 121 lines)

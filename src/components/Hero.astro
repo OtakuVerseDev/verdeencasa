@@ -1,0 +1,21 @@
+---
+import HeroActions from './HeroActions.astro';
+const { title = 'VerdeEnCasa — Guía completa de cuidado de plantas de interior', lead = '' } = Astro.props;
+const heroImage = 'https://images.unsplash.com/photo-1463320726281-696a485928c7?w=1200&q=80&fm=webp';
+---
+
+<section class="hero bg-white" aria-labelledby="hero-heading" style="display:flex;justify-content:center;align-items:center;min-height:auto;padding:2rem 1rem;">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:2rem;max-width:900px;width:100%;">
+    <div class="hero-left" style="text-align:center;">
+      <h1 id="hero-heading" class="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight text-gray-900">{title}</h1>
+      {lead && <p class="mt-4 text-lg text-gray-700">{lead}</p>}
+      <div class="mt-6"><HeroActions /></div>
+    </div>
+
+    <div class="hero-right" role="img" aria-hidden="true" style="max-width:800px;width:100%;">
+      <picture>
+        <img src={heroImage} alt="" width="1200" height="630" loading="eager" decoding="async" fetchpriority="high" class="w-full h-auto rounded-lg shadow-lg" />
+      </picture>
+    </div>
+  </div>
+</section>

@@ -10,6 +10,7 @@ export const articleImages: Record<string, string> = {
   'hojas-secas-puntas-marrones': 'https://images.unsplash.com/photo-1558603668-6570496b66f8?w=800&q=80', // Planta seca
   'planta-no-crece-causas': 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=800&q=80', // Planta pequeña
   'mosquitos-tierra-plantas': 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800&q=80',
+  'cochinilla-algodonosa-plantas': 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800&q=80',
   
   // Guías - imágenes de cuidados específicos
   'riego-ficus-benjamina': 'https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=800&q=80', // Ficus
@@ -39,5 +40,16 @@ export const articleImages: Record<string, string> = {
 };
 
 export function getArticleImage(slug: string): string {
-  return articleImages[slug] || 'https://images.unsplash.com/photo-1463154545680-d59320fd685d?w=800&q=80';
+  const normalizedSlug = slug.replace(/\.md$/, '');
+  // Prefer local optimized images if available in public/og, fallback to configured Unsplash
+  const localMap: Record<string, string> = {
+    'default': 'https://images.unsplash.com/photo-1463320726281-696a485928c7?w=1200&q=80&fm=webp',
+  };
+  // Return a valid single image URL (not srcset) because callers use <img src="...">
+  const remote = articleImages[normalizedSlug];
+  if (remote && remote.includes('images.unsplash.com')) {
+    const base = remote.split('?')[0];
+    return `${base}?w=1200&q=80&fm=webp`;
+  }
+  return articleImages[normalizedSlug] || localMap['default'];
 }
